@@ -1,17 +1,17 @@
 react-prop-transformer
 ============
 
-React Component to transform props passed to immediate children
+A React Component
+- to modify props passed to its children by using a transformer function
+- unlike Higher Order Components/Decorators this happens at render time and not at defintion time
+- that gives you ability to dynamically pass props to children which were listed statically without loops.
+
 
 Installation
 ------------
 ```
 npm install --save react-prop-transformer
 ```
-or
-```
-yarn add react-prop-transformer
-```  
 
 Example Usage
 -------------
@@ -23,7 +23,7 @@ function Table() {
   return (
     <div className="table">
       <PropTransformer
-        transforms={{ className: (base, i) => `${base} ${_.isEven(i) ? 'white' : 'grey'}` }}
+        transforms={{ className: (origClassName, i) => `${origClassName} ${_.isEven(i) ? 'white' : 'grey'}` }}
       >
         <div className="table-row">Apples</div>
         <div className="table-row">Oranges</div>
