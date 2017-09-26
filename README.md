@@ -19,11 +19,11 @@ Example Usage
 import PropTransformer from 'react-prop-transformer';
 import _ from 'lodash';
 
-function Form() {
+function Table() {
   return (
     <div className="table">
       <PropTransformer
-        transforms={{ className: (base) => `${base} ${_.isEven(i) ? 'white' : 'grey'}` }}
+        transforms={{ className: (base, i) => `${base} ${_.isEven(i) ? 'white' : 'grey'}` }}
       >
         <div className="table-row">Apples</div>
         <div className="table-row">Oranges</div>
